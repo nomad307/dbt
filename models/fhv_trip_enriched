@@ -1,0 +1,8 @@
+
+{{ config(
+  materialized='table',
+  file_format='delta'
+) }}
+
+select dispatching_base_num, pickup_datetime, dropOff_datetime, PUlocationID, DOlocationID, SR_Flag, Affiliated_base_number
+from dwh.fhv_tripdata_filtered
