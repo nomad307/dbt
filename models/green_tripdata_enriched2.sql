@@ -18,4 +18,4 @@ select  VendorID, lpep_pickup_datetime, lpep_dropoff_datetime, store_and_fwd_fla
         end AS payment_type_name,
         trip_type,
         congestion_surcharge
-from dwh.green_tripdata_enriched
+from {{ ref('green_tripdata_enriched') }}
